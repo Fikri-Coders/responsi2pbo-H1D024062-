@@ -2,9 +2,22 @@ Pertanyaan Refleksi
 Setelah menyelesaikan kode, jawab pertanyaan berikut:
 
 Apa yang dimaksud dengan constructor overloading dalam pemrograman berorientasi objek?
-Bagaimana cara Java membedakan constructor yang memiliki nama sama namun parameter berbeda?
-Apa perbedaan antara mengakses variabel secara langsung (misalnya: objek.variabel = nilai) dengan menggunakan method setter?
-Jelaskan konsep encapsulation dan bagaimana method dapat membantu melindungi data dalam sebuah class!
-Mengapa constructor tidak memiliki return type, bahkan tidak menggunakan kata kunci void?
+Jawaban:
+Constructor overloading adalah kondisi di mana sebuah class memiliki lebih dari satu constructor dengan nama yang sama persis, namun memiliki daftar parameter yang berbeda (baik jumlah maupun tipe datanya). Ini memberikan fleksibilitas saat membuat objek baru dengan variasi data awal yang tersedia.
 
-Jawaban
+Bagaimana cara Java membedakan constructor yang memiliki nama sama namun parameter berbeda?
+Jawaban:
+Java membedakannya berdasarkan "Tanda Tangan Method" (Method Signature), yaitu jumlah parameter, tipe data parameter, dan urutan parameter yang dikirimkan saat inisialisasi objek (new).
+
+Apa perbedaan antara mengakses variabel secara langsung (misalnya: objek.variabel = nilai) dengan menggunakan method setter?
+Jawaban:
+- Akses Langsung: Kurang aman karena nilai bisa diubah sembarangan tanpa validasi.
+- Setter: Lebih aman (Encapsulation) karena kita bisa menyisipkan logika validasi sebelum nilai variabel benar-benar diubah (misal: mencegah input harga negatif).
+
+Jelaskan konsep encapsulation dan bagaimana method dapat membantu melindungi data dalam sebuah class!
+Jawaban:
+Encapsulation adalah mekanisme membungkus data (variabel) dan menyembunyikannya dari akses langsung pihak luar (biasanya menggunakan modifier 'private'). Method (getter/setter) bertindak sebagai gerbang/perantara yang mengontrol bagaimana data tersebut boleh diakses atau diubah.
+
+Mengapa constructor tidak memiliki return type, bahkan tidak menggunakan kata kunci void?
+Jawaban:
+Karena tujuan utama constructor bukan untuk melakukan proses perhitungan yang menghasilkan nilai, melainkan khusus untuk menginisialisasi objek dan mengembalikan referensi ke objek (instance) class itu sendiri secara implisit.

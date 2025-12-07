@@ -1,11 +1,21 @@
 [PERTANYAAN PENGAYAAN]
 
 1. Mengapa constructor di class Member wajib memanggil constructor Customer menggunakan super(...)?
+Jawaban:
+Karena class Member mewarisi atribut dari Customer. Java mewajibkan atribut milik parent diinisialisasi terlebih dahulu sebelum objek anak (Member) bisa terbentuk sempurna. Jika tidak dipanggil manual, Java akan mencari constructor default (tanpa parameter), yang mana tidak kita buat di class Customer, sehingga akan menyebabkan error.
 
 2. Apa tujuan memanggil super.tampilkanInfo() saat melakukan overriding method di subclass?
+Jawaban:
+Untuk menghindari duplikasi kode (Code Redundancy). Kita memanfaatkan logika yang sudah ditulis di parent (menampilkan nama, ID, belanja) sehingga di subclass kita hanya perlu menulis kode untuk menampilkan data tambahan (poin, level) saja.
 
 3. Berikan contoh kondisi di mana pemanggilan super.method() sangat penting dalam pewarisan.
+Jawaban:
+Sangat penting ketika logika di parent class cukup kompleks (misal rumus pajak dasar). Jika subclass ingin menambah pajak khusus, ia cukup memanggil perhitungan dasar via super.hitungPajak() lalu menambahkannya dengan pajak tambahan, tanpa harus menyalin ulang rumus dasarnya.
 
 4. Bagaimana keyword super membantu membedakan atribut yang memiliki nama sama antara parent dan child?
+Jawaban:
+Jika terjadi "Variable Shadowing" (nama variabel anak sama dengan parent), keyword 'super.namaVariabel' secara eksplisit merujuk pada variabel milik parent class, sedangkan 'this.namaVariabel' merujuk pada variabel milik class itu sendiri (anak).
 
 5. Mengapa pendekatan inheritance lebih efisien dibanding menyalin ulang seluruh atribut dan method ke dalam class Member?
+Jawaban:
+Karena jika ada perubahan pada struktur data dasar (misal format ID berubah), kita cukup mengubahnya di satu tempat yaitu class Customer. Jika disalin ulang (copy-paste), kita harus mengubahnya di kedua class (Customer dan Member), yang meningkatkan risiko bug dan kerja dua kali.
