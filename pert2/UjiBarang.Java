@@ -1,4 +1,4 @@
-lass UjiBarang {
+class UjiBarang {
     public static void main(String[] args) {
         // Buat objek barang pertama gitar
         
