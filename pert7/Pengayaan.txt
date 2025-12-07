@@ -2,7 +2,22 @@ Pertanyaan Refleksi
 Setelah menyelesaikan kode, jawab pertanyaan berikut:
 
 1. Apa perbedaan antara interface dengan class biasa?
+Jawaban:
+Class biasa adalah blueprint nyata yang berisi implementasi penuh (atribut dan method dengan body). Interface hanyalah sekumpulan method abstrak (kontrak) tanpa implementasi logika di dalamnya. Class biasa menjelaskan "objek itu apa", sedangkan Interface menjelaskan "objek itu bisa melakukan apa".
+
 2. Mengapa interface tidak memiliki implementasi method di dalamnya?
+Jawaban:
+Karena tujuan utama interface adalah mendefinisikan standar perilaku (kontrak) yang harus dipatuhi oleh class penggunanya, tanpa mendikte bagaimana cara kerjanya. Implementasi detail diserahkan sepenuhnya kepada class yang mengimplementasikannya agar lebih fleksibel. (Catatan: Sejak Java 8, interface bisa memiliki 'default method' dengan body, tapi secara konsep dasar tetap abstrak).
+
 3. Apa tujuan penggunaan keyword "implements" pada sebuah class?
+Jawaban:
+Keyword "implements" digunakan untuk mendeklarasikan bahwa sebuah class berjanji untuk memenuhi semua kontrak method yang ada di dalam interface tersebut. Jika class tersebut gagal mengimplementasikan salah satu method saja, maka akan terjadi error kompilasi (kecuali class tersebut abstrak).
+
 4. Apakah sebuah class dapat mengimplementasikan lebih dari satu interface? Jelaskan dan berikan contoh sederhana.
+Jawaban:
+Ya, BISA. Java mendukung Multiple Interface Implementation. Ini adalah cara Java mengatasi keterbatasan Single Inheritance. 
+Contoh: 'public class Smartphone implements Kamera, Telepon { ... }'. Artinya class Smartphone bisa berperilaku sebagai Kamera dan juga sebagai Telepon sekaligus.
+
 5. Jika sebuah class mengimplementasikan interface, apa yang terjadi jika class tersebut tidak mengimplementasikan semua method dari interface tersebut?
+Jawaban:
+Class tersebut akan dianggap sebagai Abstract Class dan harus dideklarasikan dengan keyword 'abstract'. Class tersebut tidak akan bisa dibuat menjadi objek (instansiasi) sampai ada subclass yang melengkapi implementasi method yang kurang tersebut.
