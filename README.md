@@ -1,7 +1,7 @@
 # Responsi 2 - Praktikum Pemrograman Berorientasi Objek
 
 **Dibuat oleh:** Ahmad Fikri Zakaria  
-**NIM:** H1D024062 
+**NIM:** H1D024062    
 **Shift Baru:** Shift G    
 **Shift KRS:** Shift B
 
