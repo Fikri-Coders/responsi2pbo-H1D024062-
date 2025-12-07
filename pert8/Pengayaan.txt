@@ -1,8 +1,23 @@
-Setelah anda menyelesaikan kode, tolong jawab pertanyaan dibawah ini ya =
-
+Pertanyaan Refleksi
+Setelah menyelesaikan kode, jawab pertanyaan berikut:
 
 1. Apa tujuan utama adanya interface dalam pemrograman berorientasi objek, dan bagaimana interface membantu menciptakan kontrak perilaku?
+Jawaban:
+Tujuan utamanya adalah standardisasi dan abstraksi. Interface bertindak sebagai kontrak yang mewajibkan class implementernya untuk menyediakan perilaku (method) tertentu. Ini memastikan bahwa objek yang berbeda-beda tetap bisa berinteraksi dengan cara yang sama.
+
 2. Mengapa interface dapat memiliki banyak implementasi, dan apa makna konseptual dari kemampuan tersebut dalam desain sistem?
+Jawaban:
+Karena interface hanya mendefinisikan "apa" (tanda tangan method), bukan "bagaimana" (isi method). Maknanya adalah fleksibilitas (Loose Coupling); satu interface `Payment` bisa diimplementasikan oleh `OVO`, `GoPay`, atau `Dana` dengan cara kerja internal yang berbeda total tanpa merusak sistem utama.
+
 3. Apa perbedaan mendasar antara extends dan implements dalam konteks interface, jika dilihat secara konsep tanpa melihat contoh kode?
+Jawaban:
+- `Extends` (Pewarisan) menyiratkan hubungan "Adalah" (Is-A) dan mewarisi properti/state dari induk.
+- `Implements` (Realisasi) menyiratkan hubungan "Mampu Melakukan" (Can-Do) dan hanya memenuhi janji kontrak perilaku tanpa mewarisi state.
+
 4. Apa alasan diperkenalkannya default method dalam interface, dan bagaimana fitur ini memengaruhi keberlangsungan (compatibility) suatu sistem yang sudah berjalan?
+Jawaban:
+Untuk menjaga *Backward Compatibility*. Jika kita ingin menambah method baru di interface yang sudah dipakai oleh ratusan class, tanpa default method, semua class itu akan error dan harus diubah satu per satu. Dengan default method, kita bisa menambah fitur baru di interface tanpa merusak class lama yang sudah ada.
+
 5. Bagaimana konsep multiple interface memperluas fleksibilitas desain tanpa menimbulkan masalah kompleksitas yang biasa muncul pada multiple inheritance?
+Jawaban:
+Multiple inheritance (class) rawan masalah "Diamond Problem" (konflik state/variabel dari dua induk). Multiple interface menghindarinya karena interface tidak membawa state/variabel instance, hanya kontrak method. Jadi sebuah class aman mengimplementasikan banyak interface sekaligus (misal: ProgrammerMagang adalah Karyawan DAN juga UserSistem).
