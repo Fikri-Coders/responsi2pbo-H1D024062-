@@ -1,8 +1,23 @@
 Pertanyaan Refleksi
 Setelah menyelesaikan kode, jawab pertanyaan berikut:
 
-1. Apa itu abstract class dan Kenapa kita membutuhkan Abstarct class?
-2. Apa perbedaan utama antara abstract class dan class biasa dalam pemrograman berorientasi objek? 
+1. Apa itu abstract class dan Kenapa kita membutuhkan Abstract class?
+Jawaban:
+Abstract class adalah class yang tidak dapat diinstansiasi menjadi objek secara langsung dan mengandung satu atau lebih abstract method. Kita membutuhkannya sebagai kerangka dasar (template) untuk class-class turunannya, memastikan bahwa semua subclass memiliki struktur yang sama namun implementasi detail yang berbeda.
+
+2. Apa perbedaan utama antara abstract class dan class biasa dalam pemrograman berorientasi objek?
+Jawaban:
+- Class Biasa (Concrete): Dapat diinstansiasi (dibuat objeknya) dan semua methodnya wajib memiliki body/implementasi.
+- Abstract Class: Tidak dapat diinstansiasi (new AbstractClass() akan error) dan boleh memiliki method tanpa body (abstract method).
+
 3. Mengapa subclass wajib mengimplementasikan semua abstract method dari parent class?
+Jawaban:
+Karena abstract method di parent hanyalah "janji" atau "kontrak" bahwa perilaku tersebut harus ada. Jika subclass tidak mengimplementasikannya, maka subclass tersebut masih dianggap "belum lengkap" (abstrak) dan tidak bisa digunakan untuk membuat objek.
+
 4. Mengapa abstract method tidak boleh memiliki isi implementasi di dalam abstract class?
-5. Bagaimana abstract class dapat mendukung konsep polimorfisme, dan mengapa objek yang direferensikan melalui tipe abstract class tetap dapat menjalankan perilaku berbeda pada masing-masing subclass?
+Jawaban:
+Karena tujuan abstract method adalah mendefinisikan "apa" yang harus dilakukan, bukan "bagaimana" caranya. Implementasi detail ("bagaimana") diserahkan sepenuhnya kepada subclass karena setiap subclass mungkin memiliki cara kerja yang berbeda-beda.
+
+5. Bagaimana abstract class dapat mendukung konsep polimorfisme?
+Jawaban:
+Kita dapat menggunakan tipe Abstract Class sebagai referensi variabel (misal: KendaraanGalaksi k;) untuk menampung objek dari subclass apapun (Pesawat atau Kapal). Saat method dipanggil, Java akan menjalankan implementasi method milik subclass yang spesifik (Dynamic Method Dispatch).
